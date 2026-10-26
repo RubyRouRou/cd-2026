@@ -126,6 +126,7 @@ function show(html){
   document.getElementById("app").innerHTML=html;
   document.getElementById("lock").hidden=true;
   document.getElementById("app").hidden=false;
+  window.scrollTo(0,0);
   countdown();
 }
 document.getElementById("form").addEventListener("submit",async e=>{
