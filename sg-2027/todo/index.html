@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<title>宜靜的新加坡行前提醒</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one column checklist in date order; the same Peranakan tile band as the trip site */
+:root{
+  --bg:#eef1ee; --paper:#fbfcfa; --ink:#142a27; --muted:#56645f;
+  --jade:#17695d; --brass:#8a6720; --rose:#b4506e; --line:#d3dbd6; --chip:#e1e8e3;
+  --f-latin:"Marcellus","Didot","Times New Roman",serif;
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --paper:#16201e; --ink:#e6ece8; --muted:#9aaba5;
+  --jade:#5fbfaa; --brass:#d4aa5a; --rose:#e08aa4; --line:#2a3734; --chip:#1d2a27; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --paper:#16201e; --ink:#e6ece8; --muted:#9aaba5;
+  --jade:#5fbfaa; --brass:#d4aa5a; --rose:#e08aa4; --line:#2a3734; --chip:#1d2a27; color-scheme:dark}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px;display:grid;gap:18px}
+h1{font-family:var(--f-display);font-size:1.9rem;font-weight:900;margin:0;line-height:1.25;text-wrap:balance}
+.lat{font-family:var(--f-latin);letter-spacing:.03em}
+.sub{margin:2px 0 0;color:var(--muted)}
+.tiles{height:22px;margin-bottom:12px;
+  background:
+    radial-gradient(circle at 50% 50%,var(--brass) 0 2px,transparent 2.5px),
+    radial-gradient(circle at 0 0,var(--rose) 0 7px,transparent 7.5px),
+    radial-gradient(circle at 100% 0,var(--rose) 0 7px,transparent 7.5px),
+    radial-gradient(circle at 0 100%,var(--rose) 0 7px,transparent 7.5px),
+    radial-gradient(circle at 100% 100%,var(--rose) 0 7px,transparent 7.5px),
+    conic-gradient(from 45deg,var(--jade) 0 25%,var(--paper) 0 50%,var(--jade) 0 75%,var(--paper) 0);
+  background-size:22px 22px}
+.cal{background:var(--paper);border:1px solid var(--line);padding:14px 16px;display:grid;gap:8px}
+.cal a.btn{justify-self:start;text-decoration:none;background:var(--jade);color:var(--paper);font-weight:700;padding:10px 18px;border-radius:3px}
+.cal p{margin:0;font-size:.9rem;color:var(--muted)}
+.prog{font-size:.95rem;color:var(--jade);font-weight:700;margin:0}
+ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--brass);padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:start}
+.item input{width:22px;height:22px;margin:3px 0 0;accent-color:var(--jade)}
+.item label{display:grid;gap:2px;min-width:0;cursor:pointer}
+.when{font-size:.88rem;color:var(--brass)}
+.when b{font-size:1.1rem;font-weight:400;margin-right:4px}
+.what{font-family:var(--f-display);font-weight:600;font-size:1.1rem}
+.how{font-size:.93rem;color:var(--muted)}
+.gcal{grid-column:2;justify-self:start;font-size:.82rem;color:var(--jade);border:1px solid var(--jade);border-radius:999px;padding:0 10px;text-decoration:none;margin-top:4px}
+.item:has(input:checked){border-left-color:var(--line);opacity:.6}
+.item:has(input:checked) .what{text-decoration:line-through}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.foot{color:var(--muted);font-size:.85rem;text-align:center;margin:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="tiles" aria-hidden="true"></div>
+    <h1>宜靜的新加坡行前提醒</h1>
+    <p class="sub"><span class="lat">2027.01.04 — 01.08</span>・跟 Ruby 一起</p>
+  </header>
+
+  <section class="cal">
+    <a class="btn" href="../reminders.ics">一次加到 iPhone 行事曆</a>
+    <p>iPhone 點了會問要不要加入「新加坡行前提醒」8 個事件，每個到時間會跳通知。用 Google 日曆的話，點下面每一項的「加到 Google 日曆」。</p>
+  </section>
+
+  <p class="prog" id="prog" aria-live="polite"></p>
+
+  <ol>
+    <li class="item">
+      <input type="checkbox" id="c0" data-k="0">
+      <label for="c0"><span class="when"><b class="lat">11/15</b> 09:00</span><span class="what">確認護照效期</span><span class="how">要到 2027/7/8 以後（回程日加 6 個月）。不夠就馬上去換。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E7%A2%BA%E8%AA%8D%E8%AD%B7%E7%85%A7%E6%95%88%E6%9C%9F&amp;dates=20261115T090000/20261115T091500&amp;ctz=Asia/Taipei&amp;details=%E8%A6%81%E5%88%B0%202027/7/8%20%E4%BB%A5%E5%BE%8C%EF%BC%88%E5%9B%9E%E7%A8%8B%E6%97%A5%E5%8A%A0%206%20%E5%80%8B%E6%9C%88%EF%BC%89%E3%80%82%E4%B8%8D%E5%A4%A0%E5%B0%B1%E9%A6%AC%E4%B8%8A%E5%8E%BB%E6%8F%9B%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c1" data-k="1">
+      <label for="c1"><span class="when"><b class="lat">11/15</b> 09:15</span><span class="what">保旅平險＋不便險</span><span class="how">越早保越好。也看一下刷機票那張卡有沒有附險。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E4%BF%9D%E6%97%85%E5%B9%B3%E9%9A%AA%EF%BC%8B%E4%B8%8D%E4%BE%BF%E9%9A%AA&amp;dates=20261115T091500/20261115T093000&amp;ctz=Asia/Taipei&amp;details=%E8%B6%8A%E6%97%A9%E4%BF%9D%E8%B6%8A%E5%A5%BD%E3%80%82%E4%B9%9F%E7%9C%8B%E4%B8%80%E4%B8%8B%E5%88%B7%E6%A9%9F%E7%A5%A8%E9%82%A3%E5%BC%B5%E5%8D%A1%E6%9C%89%E6%B2%92%E6%9C%89%E9%99%84%E9%9A%AA%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c2" data-k="2">
+      <label for="c2"><span class="when"><b class="lat">12/28</b> 09:00</span><span class="what">eSIM、Grab、換新幣</span><span class="how">買 eSIM；裝 Grab 並綁信用卡；換新幣現金約 S$100（小販中心用，其他刷卡或 Apple Pay）。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9CeSIM%E3%80%81Grab%E3%80%81%E6%8F%9B%E6%96%B0%E5%B9%A3&amp;dates=20261228T090000/20261228T091500&amp;ctz=Asia/Taipei&amp;details=%E8%B2%B7%20eSIM%EF%BC%9B%E8%A3%9D%20Grab%20%E4%B8%A6%E7%B6%81%E4%BF%A1%E7%94%A8%E5%8D%A1%EF%BC%9B%E6%8F%9B%E6%96%B0%E5%B9%A3%E7%8F%BE%E9%87%91%E7%B4%84%20S%24100%EF%BC%88%E5%B0%8F%E8%B2%A9%E4%B8%AD%E5%BF%83%E7%94%A8%EF%BC%8C%E5%85%B6%E4%BB%96%E5%88%B7%E5%8D%A1%E6%88%96%20Apple%20Pay%EF%BC%89%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c3" data-k="3">
+      <label for="c3"><span class="when"><b class="lat">12/30</b> 09:00</span><span class="what">打包</span><span class="how">泳衣（飯店有泳池）、英式三腳轉接頭、1/7 ATLAS 的衣服＋包鞋（不能穿球鞋、涼鞋、拖鞋）、薄外套（冷氣很強）、常用藥。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E6%89%93%E5%8C%85&amp;dates=20261230T090000/20261230T091500&amp;ctz=Asia/Taipei&amp;details=%E6%B3%B3%E8%A1%A3%EF%BC%88%E9%A3%AF%E5%BA%97%E6%9C%89%E6%B3%B3%E6%B1%A0%EF%BC%89%E3%80%81%E8%8B%B1%E5%BC%8F%E4%B8%89%E8%85%B3%E8%BD%89%E6%8E%A5%E9%A0%AD%E3%80%811/7%20ATLAS%20%E7%9A%84%E8%A1%A3%E6%9C%8D%EF%BC%8B%E5%8C%85%E9%9E%8B%EF%BC%88%E4%B8%8D%E8%83%BD%E7%A9%BF%E7%90%83%E9%9E%8B%E3%80%81%E6%B6%BC%E9%9E%8B%E3%80%81%E6%8B%96%E9%9E%8B%EF%BC%89%E3%80%81%E8%96%84%E5%A4%96%E5%A5%97%EF%BC%88%E5%86%B7%E6%B0%A3%E5%BE%88%E5%BC%B7%EF%BC%89%E3%80%81%E5%B8%B8%E7%94%A8%E8%97%A5%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c4" data-k="4">
+      <label for="c4"><span class="when"><b class="lat">1/1</b> 09:00</span><span class="what">填 SG Arrival Card</span><span class="how">只能在 1/1–1/3 填。用 MyICA App 或 ICA 官網，不要用代辦網站。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E5%A1%AB%20SG%20Arrival%20Card&amp;dates=20270101T090000/20270101T091500&amp;ctz=Asia/Taipei&amp;details=%E5%8F%AA%E8%83%BD%E5%9C%A8%201/1%E2%80%931/3%20%E5%A1%AB%E3%80%82%E7%94%A8%20MyICA%20App%20%E6%88%96%20ICA%20%E5%AE%98%E7%B6%B2%EF%BC%8C%E4%B8%8D%E8%A6%81%E7%94%A8%E4%BB%A3%E8%BE%A6%E7%B6%B2%E7%AB%99%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c5" data-k="5">
+      <label for="c5"><span class="when"><b class="lat">1/3</b> 20:00</span><span class="what">出發前一晚檢查</span><span class="how">護照、手機、信用卡、新幣、轉接頭。明天 06:00 到桃園 T1，08:20 起飛。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E5%87%BA%E7%99%BC%E5%89%8D%E4%B8%80%E6%99%9A%E6%AA%A2%E6%9F%A5&amp;dates=20270103T200000/20270103T201500&amp;ctz=Asia/Taipei&amp;details=%E8%AD%B7%E7%85%A7%E3%80%81%E6%89%8B%E6%A9%9F%E3%80%81%E4%BF%A1%E7%94%A8%E5%8D%A1%E3%80%81%E6%96%B0%E5%B9%A3%E3%80%81%E8%BD%89%E6%8E%A5%E9%A0%AD%E3%80%82%E6%98%8E%E5%A4%A9%2006%3A00%20%E5%88%B0%E6%A1%83%E5%9C%92%20T1%EF%BC%8C08%3A20%20%E8%B5%B7%E9%A3%9B%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c6" data-k="6">
+      <label for="c6"><span class="when"><b class="lat">1/7</b> 16:30</span><span class="what">回飯店換裝去 ATLAS</span><span class="how">19:00 ATLAS 晚餐，有服裝規定。走路 5–10 分鐘。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E5%9B%9E%E9%A3%AF%E5%BA%97%E6%8F%9B%E8%A3%9D%E5%8E%BB%20ATLAS&amp;dates=20270107T163000/20270107T164500&amp;ctz=Asia/Taipei&amp;details=19%3A00%20ATLAS%20%E6%99%9A%E9%A4%90%EF%BC%8C%E6%9C%89%E6%9C%8D%E8%A3%9D%E8%A6%8F%E5%AE%9A%E3%80%82%E8%B5%B0%E8%B7%AF%205%E2%80%9310%20%E5%88%86%E9%90%98%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="c7" data-k="7">
+      <label for="c7"><span class="when"><b class="lat">1/8</b> 09:15</span><span class="what">準備退房</span><span class="how">10:00 出發去樟宜 T3，先報到託運再逛 Jewel。14:25 起飛。</span></label>
+      <a class="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BD%9C%E6%BA%96%E5%82%99%E9%80%80%E6%88%BF&amp;dates=20270108T091500/20270108T093000&amp;ctz=Asia/Taipei&amp;details=10%3A00%20%E5%87%BA%E7%99%BC%E5%8E%BB%E6%A8%9F%E5%AE%9C%20T3%EF%BC%8C%E5%85%88%E5%A0%B1%E5%88%B0%E8%A8%97%E9%81%8B%E5%86%8D%E9%80%9B%20Jewel%E3%80%8214%3A25%20%E8%B5%B7%E9%A3%9B%E3%80%82" target="_blank" rel="noopener">加到 Google 日曆</a>
+    </li>
+  </ol>
+
+  <p class="foot">打勾只存在你這支手機的瀏覽器裡。行程細節看 Ruby 傳的行程網頁。</p>
+</div>
+
+<script>
+const boxes=[...document.querySelectorAll('.item input')];
+const KEY="sg2027-yijing-done";
+let done={};
+try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(_){}
+function prog(){const n=boxes.filter(b=>b.checked).length;document.getElementById("prog").textContent=`完成 ${n} / ${boxes.length}`;}
+boxes.forEach(b=>{b.checked=!!done[b.dataset.k];b.addEventListener("change",()=>{done[b.dataset.k]=b.checked;try{localStorage.setItem(KEY,JSON.stringify(done))}catch(_){}prog();});});
+prog();
+</script>
+</body>
+</html>
