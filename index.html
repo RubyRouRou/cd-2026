@@ -145,10 +145,15 @@ document.getElementById("form").addEventListener("submit",async e=>{
   const pw=document.getElementById("pw").value.trim(), err=document.getElementById("err");
   err.textContent="解鎖中…";
   try{ const html=await unlock(pw); show(html); err.textContent="";
-       try{sessionStorage.setItem("cdpw",pw)}catch(_){}
+       try{localStorage.setItem("cdpw",JSON.stringify({pw,exp:Date.now()+5*86400000}))}catch(_){}
   }catch(_){ err.textContent="密碼不對，請再試一次（注意大小寫與減號）"; }
 });
-(async()=>{ try{const pw=sessionStorage.getItem("cdpw"); if(pw) show(await unlock(pw));}catch(_){} })();
+(async()=>{
+  let saved=null;
+  try{ saved=JSON.parse(localStorage.getItem("cdpw")||"null"); }catch(_){}
+  if(!saved||!saved.pw||!(saved.exp>Date.now())){ try{localStorage.removeItem("cdpw")}catch(_){} return; }
+  try{ show(await unlock(saved.pw)); }catch(_){ try{localStorage.removeItem("cdpw")}catch(_){} }
+})();
 </script>
 </body>
 </html>
